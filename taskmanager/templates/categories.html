@@ -12,22 +12,19 @@
 </div>
 
 <div class="row">
-    {% for category in categories%}
+    {% for category in categories %}
     <div class="col s12 m6 l3">
-      <div class="card light-blue darken-4 center-align">
-        <div class="card-content white-text">
-          <span class="card-title">{{ category.category_name }}</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+        <div class="card light-blue darken-4 center-align">
+            <div class="card-content white-text">
+                <span class="card-title">{{ category.category_name }}</span>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('edit_category', category_id=category.id) }}" class="btn green accent-4">Edit</a>
+                <a href="#" class="btn red">Delete</a>
+            </div>
         </div>
-        <div class="card-action">
-          <a class="btn green accent-4" href="#">Edit</a>
-          <a class="btn red" href="#">Delete</a>
-        </div>
-      </div>
     </div>
-    {% endfor%}
-  </div>
-            
+    {% endfor %}
+</div>
 
 {% endblock %}
